@@ -1408,7 +1408,7 @@ input, select, textarea {
 		border: 0;
 		border-top: solid 1px #ddd;
 		padding: 1.5em 0 0 0;
-		margin: 1.75em 0 0 0;
+		margin: 1em 0 0 0;
 	}
 
 	sub {
@@ -1428,7 +1428,7 @@ input, select, textarea {
 	}
 
 	p, ul, ol, dl, table, blockquote, form {
-		margin-bottom: 2em;
+		margin-bottom: 1.5em;
 	}
 
 /* Table */
@@ -1514,7 +1514,7 @@ input, select, textarea {
 /* Section/Article */
 
 	section, article {
-		margin-bottom: 3em;
+		margin-bottom: 2em;
 	}
 
 		section > :last-child, section:last-child, article > :last-child, article:last-child {
@@ -1569,7 +1569,7 @@ input, select, textarea {
 	#wrapper {
 		width: 45em;
 		margin: 0 auto;
-		min-height: 100vh;
+		min-height: 1em;
 		max-width: 100%;
 		padding: 1em 0;
 		display: -moz-flex;
@@ -1838,7 +1838,7 @@ input, select, textarea {
 	#footer {
 		color: gray;
 		text-align: center;
-		padding: 2em 0 0 0;
+		padding: 0.5em 0 0 0;
 		font-size: 0.75em;
 	}
 
