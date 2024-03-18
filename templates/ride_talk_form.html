@@ -1,0 +1,50 @@
+<!-- Contact -->
+<article id="ride_talk_form" class="panel">
+    <header>
+        <h1>Pre-Ride Talk Generator</h1>
+        <p>Answer a few simple questions below and we'll generate a pdf with your first pre-ride speech!</p>
+    </header>
+    <form action="ride_talk" method="POST">
+        <div>
+            <div class="row">
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="leader_name" placeholder="Rider Leader's Name (Likely You?)" />
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="event_name" placeholder="Event Name" />
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="breakpoint" placeholder="Location for Ride Break" />
+                    <p>This is usually where you have coffee, a meal, or look at nature</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="sweeper_name" placeholder="Sweeper's Name" />
+                    <p>Sweeper: person in the rear making sure noone is left behind</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="corking" placeholder="Will you have corkers? Y/N "/>
+                    <p>Corkers: people blocking intersections to usher everyone across. Please use "Y" for yes or "N" for no.</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="corker_name" placeholder="Corkers Names" />
+                    <p>Please separate their names with ",".</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="night_ride" placeholder="Will part of your ride be after sundown? Y/N "/>
+                    <p>Please use "Y" for yes or "N" for no.</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="endpoint" placeholder="End Point for Ride" />
+                    <p>This is where you expect people to head off and do their on thing.</p>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <input type="text" name="colead" placeholder="Co-rider Leaders Names" />
+                    <p>Share some responsibility. Who else knows the plan and has agreed to help organize the event?</p>
+                </div>
+                <div class="col-12">
+                    <input type="submit" value="Generator PDF" />
+                </div>
+            </div>
+        </div>
+    </form>
+</article>

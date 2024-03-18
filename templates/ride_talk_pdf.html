@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/css/pdf.css" />
+		<noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Ride Speech - SRG</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div>
+            <header>
+                <h1>{{event_name}} Pre-Ride Talk</h1>
+                <p>Provided By: Social Ride Guide</p>
+            </header>
+        </div>
+        <div>
+            <p>May I have everyone’s attention please. Hello I’m <strong>{{leader_name}}</strong> one of the <strong>{{event_name}}</strong> organizers. 
+                I’ll be leading the ride to <strong>{{breakpoint}}</strong> where we will take a break and continue chatting.</p>
+
+            <p>Before we leave I have a few quick items to go over with everyone.</p>
+
+            <p> To start this is a no drop ride. So <strong>{{sweeper_name}}</strong> will be towards the back of the group to make sure noone is left behind. 
+                With that in mind, if this is your first ride please don’t feel like you need to go faster than is comfortable to stay up. 
+                We’ll make sure you find your way to the group destination.</p>
+        </div>
+
+        <div>
+            {% if night_ride %}
+                {% include "night_ride.html" %} 
+            {% endif %} 
+        </div>
+
+        <div>
+            {% if corking %}
+                {% include "corking.html" %}
+            {% endif %} 
+        </div>
+
+        <div>
+            <p>Now this is a social, conversation paced ride. We do however also need to be courteous to others using the roads and paths. 
+                So please try to stay no more than two riders wide.</p>
+            <p>Also if you hear any of the following phrases, if possible, drop to a single line of cyclists:
+                <ul>
+                    <li>Rider, runner, or car Back</li>
+                    <li>Rider or Runner Up</li>
+                </ul>
+            </p>
+            <p>Finally, after our break we’ll ride to <strong>{{endpoint}}</strong>. 
+                If you need to split off before then just please let us know. 
+                We want to make sure we haven’t somehow dropped anyone.</p>
+            <p>If you have any questions please ask me or <strong>{{colead}}</strong> now.</p>
+        </div>
+        <!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; SocialRideGuide</li><li>Make Yours At: <a href="http://SocialRideGuide.com/ride_talk_form">SocialRideGuide.com/ride_talk_form</a></li>
+						</ul>
+					</div>
+    </div>
+</body>
+</html>

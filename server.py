@@ -13,6 +13,42 @@ def home():
     return render_template('index.html')
 
 
+def night_ride(ride):
+    if ride == "Y":
+        return True
+    else:
+        return False
+
+
+def corking(cork):
+    if cork == "Y":
+        return True
+    else:
+        return False
+
+
+@app.route('/ride_talk', methods=['POST', 'GET'])
+def ride_talk():
+    if request.method == 'POST':
+        leader_name = request.form['leader_name']
+        event_name = request.form['event_name']
+        breakpoint = request.form['breakpoint']
+        sweeper_name = request.form['sweeper_name']
+        corker_name = request.form['corker_name']
+        endpoint = request.form['endpoint']
+        colead = request.form['colead']
+        night_ride_clean = night_ride(request.form['night_ride'])
+        corking_clean = corking(request.form['corking'])
+        print(corking_clean, night_ride_clean)
+
+    # return redirect('/#ride_talk_pdf')
+    return render_template('ride_talk_pdf.html', leader_name=leader_name, event_name=event_name,
+                           breakpoint=breakpoint, sweeper_name=sweeper_name,
+                           corker_name=corker_name, endpoint=endpoint,
+                           colead=colead,
+                           night_ride=night_ride_clean, corking=corking_clean)
+
+
 def write_to_ideas(data):
     with open('ideas_db.csv', newline='', mode='a') as database:
         name = data["name"]
