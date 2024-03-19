@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, request, redirect, make_response
+from flask import Flask, render_template, request, redirect
 import csv
 
 
@@ -47,11 +47,6 @@ def ride_talk():
                                colead=colead,
                                night_ride=night_ride_clean, corking=corking_clean)
 
-    # pdf = pdfkit.from_string(rendered, False)
-
-    # response = make_response(pdf)
-    # response.headers['Content-Type'] = 'application/pdf'
-    # response.headers['Content-Disposition'] = 'attachment; filename=preride_speech.pdf'
     return rendered
 
 
