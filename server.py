@@ -1,5 +1,7 @@
-from flask import Flask, render_template, send_from_directory, request, redirect
+from flask import Flask, render_template, send_from_directory, request, redirect, make_response
 import csv
+import jinja2
+import pdfkit
 
 app = Flask(__name__)
 
@@ -39,14 +41,19 @@ def ride_talk():
         colead = request.form['colead']
         night_ride_clean = night_ride(request.form['night_ride'])
         corking_clean = corking(request.form['corking'])
-        print(corking_clean, night_ride_clean)
 
-    # return redirect('/#ride_talk_pdf')
-    return render_template('ride_talk_pdf.html', leader_name=leader_name, event_name=event_name,
-                           breakpoint=breakpoint, sweeper_name=sweeper_name,
-                           corker_name=corker_name, endpoint=endpoint,
-                           colead=colead,
-                           night_ride=night_ride_clean, corking=corking_clean)
+    rendered = render_template('ride_talk_pdf.html', leader_name=leader_name, event_name=event_name,
+                               breakpoint=breakpoint, sweeper_name=sweeper_name,
+                               corker_name=corker_name, endpoint=endpoint,
+                               colead=colead,
+                               night_ride=night_ride_clean, corking=corking_clean)
+
+    # pdf = pdfkit.from_string(rendered, False)
+
+    # response = make_response(pdf)
+    # response.headers['Content-Type'] = 'application/pdf'
+    # response.headers['Content-Disposition'] = 'attachment; filename=preride_speech.pdf'
+    return rendered
 
 
 def write_to_ideas(data):
